@@ -49,7 +49,7 @@ public class MyAdapter extends PagerAdapter {
         View view = LayoutInflater.from(context).inflate(R.layout.card_item,container,false);
 
         ImageView event_image = (ImageView)view.findViewById(R.id.event_image);
-        TextView event_title = (TextView)view.findViewById(R.id.event_title);
+        final TextView event_title = (TextView)view.findViewById(R.id.event_title);
 
         event_image.setImageResource(eventList.get(position).getImage());
         event_title.setText(eventList.get(position).getName());
@@ -57,8 +57,24 @@ public class MyAdapter extends PagerAdapter {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context,"Will give Description",Toast.LENGTH_SHORT).show();
+                if(event_title.getText().toString()=="CODE WARS") {
+                    Toast.makeText(context, "Will give Description", Toast.LENGTH_SHORT).show();
+                    view.getContext().startActivity(new Intent(context, SecondPage.class));
 
+
+                }
+                else if(event_title.getText().toString()=="RECODE IT") {
+                    Toast.makeText(context, "Will give Description2", Toast.LENGTH_SHORT).show();
+                    view.getContext().startActivity(new Intent(context, ThirdPage.class));
+                }
+                else if(event_title.getText().toString()=="QUIZ MASTER") {
+                    Toast.makeText(context, "Will give Description3", Toast.LENGTH_SHORT).show();
+                    view.getContext().startActivity(new Intent(context, ForthPage.class));
+                }
+                else if(event_title.getText().toString()=="SHUTTER UP") {
+                    Toast.makeText(context, "Will give Description4", Toast.LENGTH_SHORT).show();
+                    view.getContext().startActivity(new Intent(context, FifthPage.class));
+                }
             }
         });
 

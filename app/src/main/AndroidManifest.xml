@@ -9,8 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ForthPage"></activity>
-        <activity android:name=".ThirdPage" />
+        <activity
+            android:name=".FifthPage"
+            android:theme="@style/AppTheme.SlidrActivityTheme"/>
+        <activity
+            android:name=".ForthPage"
+            android:theme="@style/AppTheme.SlidrActivityTheme"/>
+        <activity
+            android:name=".ThirdPage"
+            android:theme="@style/AppTheme.SlidrActivityTheme"/>
         <activity
             android:name=".SecondPage"
             android:theme="@style/AppTheme.SlidrActivityTheme" />

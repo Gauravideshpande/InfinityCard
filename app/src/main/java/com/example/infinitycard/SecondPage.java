@@ -13,6 +13,7 @@ public class SecondPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second_page);
+        overridePendingTransition(R.anim.push_up_in, R.anim.push_up_out);
         Slidr.attach(this);
 
     }

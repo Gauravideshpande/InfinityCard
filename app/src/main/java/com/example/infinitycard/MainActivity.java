@@ -1,10 +1,12 @@
 package com.example.infinitycard;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager;
 
@@ -15,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     HorizontalInfiniteCycleViewPager viewPager;
     List<Event> eventList = new ArrayList<>();
+    TextView eventsname;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,17 +25,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initData();
-        viewPager = (HorizontalInfiniteCycleViewPager)findViewById(R.id.view_pager);
-        MyAdapter adapter = new MyAdapter(this,eventList);
+        eventsname = findViewById(R.id.event_title);
+        viewPager = (HorizontalInfiniteCycleViewPager) findViewById(R.id.view_pager);
+        MyAdapter adapter = new MyAdapter(this, eventList);
         viewPager.setAdapter(adapter);
 
     }
 
     private void initData() {
-        eventList.add(new Event("CODE WARS",R.drawable.pic1));
-        eventList.add(new Event("RECODE IT",R.drawable.pic2));
-        eventList.add(new Event("QUIZ MASTER",R.drawable.pic3));
-        eventList.add(new Event("SHUTTER UP",R.drawable.pic4));
+        eventList.add(new Event("CODE WARS", R.drawable.codewar));
+        eventList.add(new Event("RECODE IT", R.drawable.recodeit));
+        eventList.add(new Event("QUIZ MASTER", R.drawable.pic3));
+        eventList.add(new Event("SHUTTER UP", R.drawable.up));
     }
 
     public void onClick(View view) {
@@ -40,9 +44,9 @@ public class MainActivity extends AppCompatActivity {
 //        {
 //            Intent intent = new Intent(this,SecondPage.class);
 //            startActivity(intent);
-//            overridePendingTransition(R.anim.push_up_in,R.anim.push_up_out);
+              overridePendingTransition(R.anim.push_up_in,R.anim.push_up_out);
 //        }
-        switch(view.getId())
+        /*switch(view.getId())
         {
             case R.id.event_image:Intent intent = new Intent(this,SecondPage.class);
                     startActivity(intent);
@@ -61,7 +65,28 @@ public class MainActivity extends AppCompatActivity {
                     overridePendingTransition(R.anim.push_up_in,R.anim.push_up_out);
                     break;
 
+        }*/
+         /* String txt=eventsname.getText().toString();*/
+
+       /*eventList.contains()
+        if (eventList.get(m).getName() == "CODE WARS") {
+            Intent intent = new Intent(this, SecondPage.class);
+            startActivity(intent);
+            overridePendingTransition(R.anim.push_up_in, R.anim.push_up_out);
+
         }
+        else if (eventList.get(m).getName() == "RECODE IT") {
+            Intent intent = new Intent(this, ThirdPage.class);
+            startActivity(intent);
+            overridePendingTransition(R.anim.push_up_in, R.anim.push_up_out);
+
+        }
+        else if (eventList.get(m).getName() == "QUIZ MASTER") {
+            Intent intent = new Intent(this, ForthPage.class);
+            startActivity(intent);
+            overridePendingTransition(R.anim.push_up_in, R.anim.push_up_out);
+
+        }*/
 
     }
 }
